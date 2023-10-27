@@ -21,7 +21,27 @@ def main():
     
     # Display some sample images
     st.subheader("Sample Images")
-    vehicles = ['Boat', 'Bus', 'Car', 'Motorbike', 'Plane']
+    
+    root_directory = "./data"
+    def count_pictures(root_directory, vehicle):
+        counter = 0
+        for foldername, subfolders, filenames in os.walk(root_directory):
+            for filename in filenames:
+                if vehicle in filename:
+                    counter += 1
+        return counter
+
+# Loop over all the vehicles
+    vehicles = ['boat', 'bus', 'car', 'motorbike', 'plane']
+    total_count = 0
+    for vehicle in vehicles:
+    # Add and print the amount of pictures of this type of vehicle
+        count = count_pictures(root_directory, vehicle)
+        st.text(f"Number of pictures of a {vehicle}: {count}")
+        total_count += count
+        count = 0
+# Print the total amount of pictures
+    st.text(f"Total amount of pictures: {total_count}")
     
     # Define a map to your GitHub repository
     map = 'https://raw.githubusercontent.com/kieran31415/AI/main/Homework/Task3/data'
