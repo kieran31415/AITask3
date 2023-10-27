@@ -80,7 +80,7 @@ def main():
 
 # Create a training data generator from the 'training_set' directory.
         training_set = train_val_datagen.flow_from_directory(
-            'tree/main/Homework/Task3/data/training_set',     # Directory containing the training data.
+            'data/training_set',     # Directory containing the training data.
             subset='training',       # Use the training subset of data.
             target_size=(64, 64),    # Resize images to a 64x64 pixel size.
             batch_size=32,           # Set the batch size for training data.
@@ -89,7 +89,7 @@ def main():
 
 # Create a validation data generator from the 'training_set' directory.
         validation_set = train_val_datagen.flow_from_directory(
-            'tree/main/Homework/Task3/data/training_set',     # Directory containing the training data.
+            'data/training_set',     # Directory containing the training data.
             subset='validation',     # Use the validation subset of data.
             target_size=(64, 64),    # Resize images to a 64x64 pixel size.
             batch_size=32,           # Set the batch size for validation data.
@@ -98,7 +98,7 @@ def main():
 
 # Create a test data generator from the 'testing_set' directory.
         test_set = test_datagen.flow_from_directory(
-            'tree/main/Homework/Task3/data/testing_set',      # Directory containing the test data.
+            'data/testing_set',      # Directory containing the test data.
             target_size=(64, 64),    # Resize images to a 64x64 pixel size.
             batch_size=32,           # Set the batch size for test data.
             class_mode='categorical' # Categorical labels for classification.
